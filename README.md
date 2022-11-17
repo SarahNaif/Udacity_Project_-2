@@ -101,7 +101,7 @@ POSTGRES_DB_TEST=`proj_test`\
 ENV=`dev`\
 BCRYPT_PASSWORD=`your-secret-password`\
 SALT_ROUND=`10`\
-TOKEN_SECRET=`your-secret-password`\
+TOKEN_SECRET=`your-secret-password`
 
 
 ####   Package installation
