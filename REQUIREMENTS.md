@@ -82,9 +82,5 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 `/orders/:id/users [GET]` shows all orders by a specific user using their id [token required]
 
-#### Dashboard Routes
 
 
-`/products/category/:category [GET]` shows all product from the given category
-
-`/products/top/five [GET]` shows the top 5 popular products
