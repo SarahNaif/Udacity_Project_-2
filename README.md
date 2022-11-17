@@ -83,8 +83,6 @@ its aim to build restful api with postgres and express
 
 4.  `npm start` to start the API
 
-### Running Ports 
-After start up, the server will start on port `4000` and the database on port `5432`
 #### OR Using the postgreSQL pgAdmin :
 
 ####  3. Create Environment Variables
@@ -111,3 +109,8 @@ TOKEN_SECRET=`your-secret-password`
 - jsonwebtoken from npm for working with JWTs
 - bycrpt for password protection.
 - jasmine from npm for testing
+
+
+
+### Running Ports 
+After start up, the server will start on port `4000` and the database on port `5432`
