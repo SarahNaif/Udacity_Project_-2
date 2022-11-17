@@ -3,7 +3,7 @@
 This project is part of udacity full stack javascript developer scolarship ,
 its aim to build restful api with postgres and express
 
-## Install
+## Project Structure
 
 ```
 📦src
