@@ -1,6 +1,6 @@
-import express, { Request, Response } from "express";
+import { Request, Response } from "express";
 
-import { Order, orderProdType, orderType } from "../types/order-type";
+import { Order, orderProdType } from "../types/order-type";
 import { OrderStore } from "./../models/order";
 import { OrdersProductsModel } from "./../models/cart";
 

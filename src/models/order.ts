@@ -1,5 +1,5 @@
 import Client from "../database";
-import { Order, orderType } from "../types/order-type";
+import { Order } from "../types/order-type";
 
 export class OrderStore {
   async index(): Promise<Order[]> {
@@ -95,37 +95,4 @@ export class OrderStore {
       throw new Error(`Unable to show orders by user ${userId}, ${error}`);
     }
   }
-
-  // async addProduct(order: Order, orderId: string ):Promise<Order>{
-  //     try {
-  //         const connection = await Client.connect()
-  //         const orderSql = 'SELECT * FROM orders WHERE id=($1)'
-  //         const result = await connection.query(orderSql, [orderId])
-
-  //         if (result.rows[0].status !== 'active') {
-  //           throw new Error(
-  //             `Could not add product ${order.product_id} to order ${orderId} because the order status is not active`
-  //           )
-  //         }
-
-  //         connection.release()
-  //       } catch (error) {
-  //         throw new Error(`${error}`)
-  //       }
-
-  //       try {
-  //         const connection = await Client.connect()
-  //         const sql = `INSERT INTO orders_products (quantity, product_Id, order_Id)
-  //                        VALUES ($1, $2, $3)
-  //                        Returning *`
-
-  //         const result = await connection.query(sql, [order.quantity, order.product_id, orderId])
-
-  //         connection.release()
-  //         return result.rows[0]
-  //       } catch (error) {
-  //         throw new Error(`Could not add product ${order.product_id} to order ${orderId}: ${error}`)
-  //       }
-
-  // }
 }

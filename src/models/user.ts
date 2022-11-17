@@ -11,10 +11,6 @@ const hash = (password: string) => {
   return bcrypt.hashSync(password + pepper, salt);
 };
 export class UserStore {
-  // TASK : MAKE JWT AUTH
-  // COPY PROJECT
-
-  // index method selects all users in users table and returns them in a list
   async index(): Promise<User_test[]> {
     try {
       const conection = await Client.connect();
