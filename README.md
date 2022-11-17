@@ -114,3 +114,10 @@ TOKEN_SECRET=`your-secret-password`
 
 ### Running Ports 
 After start up, the server will start on port `4000` and the database on port `5432`
+
+
+### Resources:
+
+
+https://stackoverflow.com/questions/70864177/how-can-i-pass-my-bearer-token-to-next-next-tests
+
