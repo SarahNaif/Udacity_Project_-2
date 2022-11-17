@@ -67,8 +67,6 @@ its aim to build restful api with postgres and express
 
 #### 2. Using the postgreSQL :
 
-1.  `npm install` to install all packages
-
 2. Using the postgreSQL command line with host `localhost` and port `5432`:
 
 1.  `CREATE DATABASE proj;`
