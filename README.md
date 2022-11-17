@@ -91,17 +91,17 @@ After start up, the server will start on port `4000` and the database on port `5
 
 ####  3. Create Environment Variables
 
-PORT=`4000`
-POSTGRES_HOST=`localhost`
-POSTGRES_NAME=`proj`
-POSTGRES_USER=`proj_user`
-POSTGRES_PORT=`5432`
-POSTGRES_PASSWORD=`12345`
-POSTGRES_DB_TEST=`proj_test`
-ENV=`dev`
-BCRYPT_PASSWORD=`your-secret-password`
-SALT_ROUND=`10`
-TOKEN_SECRET=`your-secret-password`
+PORT=`4000`\
+POSTGRES_HOST=`localhost`\
+POSTGRES_NAME=`proj`\
+POSTGRES_USER=`proj_user`\
+POSTGRES_PORT=`5432`\
+POSTGRES_PASSWORD=`12345`\
+POSTGRES_DB_TEST=`proj_test`\
+ENV=`dev`\
+BCRYPT_PASSWORD=`your-secret-password`\
+SALT_ROUND=`10`\
+TOKEN_SECRET=`your-secret-password`\
 
 
 ####   Package installation
