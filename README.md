@@ -12,7 +12,6 @@ its aim to build restful api with postgres and express
  ┃ ┣ 📜products.ts
  ┃ ┗ 📜users.ts
  ┣ 📂middlewares
- ┃ ┣ 📜 logger.ts
  ┃ ┗ 📜verifyAuthToken.ts
  ┣ 📂models
  ┃ ┣ 📜cart.ts
@@ -31,11 +30,11 @@ its aim to build restful api with postgres and express
  ┃ ┃ ┣ 📜orderSpec.ts
  ┃ ┃ ┣ 📜productSpec.ts
  ┃ ┃ ┗ 📜userSpec.ts
- ┃ ┗  📂routes
- ┃      ┣ 📜cartSpec.ts
- ┃      ┣ 📜orderSpec.ts
- ┃      ┣ 📜productSpec.ts
- ┃      ┗ 📜userSpec.ts
+ ┃ ┗ 📂routes
+ ┃ ┃ ┣ 📜cartSpec.ts
+ ┃ ┃ ┣ 📜orderSpec.ts
+ ┃ ┃ ┣ 📜productSpec.ts
+ ┃ ┃ ┗ 📜userSpec.ts
  ┣ 📂types
  ┃ ┣ 📜order-type.ts
  ┃ ┣ 📜product-type.ts
