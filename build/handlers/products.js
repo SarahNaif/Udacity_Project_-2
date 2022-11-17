@@ -111,7 +111,7 @@ var create = function (req, res) { return __awaiter(void 0, void 0, void 0, func
                     des: req.body.des,
                     image: req.body.image,
                     price: req.body.price,
-                    category: req.body.category
+                    category: req.body.category,
                 };
                 _a.label = 1;
             case 1:
@@ -141,7 +141,7 @@ var update = function (req, res) { return __awaiter(void 0, void 0, void 0, func
                     des: req.body.des,
                     image: req.body.image,
                     price: req.body.price,
-                    category: req.body.category
+                    category: req.body.category,
                 };
                 _a.label = 1;
             case 1:

@@ -90,7 +90,7 @@ var create = function (req, res) { return __awaiter(void 0, void 0, void 0, func
             case 0:
                 order = {
                     status: req.body.status,
-                    user_id: parseInt(req.body.user_id)
+                    user_id: parseInt(req.body.user_id),
                 };
                 _a.label = 1;
             case 1:
@@ -117,7 +117,7 @@ var update = function (req, res) { return __awaiter(void 0, void 0, void 0, func
             case 0:
                 order = {
                     status: req.body.status,
-                    user_id: req.body.user_id
+                    user_id: req.body.user_id,
                 };
                 _a.label = 1;
             case 1:
@@ -187,7 +187,7 @@ var addProduct = function (req, res) { return __awaiter(void 0, void 0, void 0, 
                 order = {
                     quantity: parseInt(req.body.quantity),
                     product_id: parseInt(req.body.product_id),
-                    order_id: parseInt(req.body.order_id)
+                    order_id: parseInt(req.body.order_id),
                 };
                 _a.label = 1;
             case 1:

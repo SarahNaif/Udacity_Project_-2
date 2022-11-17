@@ -54,8 +54,12 @@ var OrdersProductsModel = /** @class */ (function () {
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         connection = _a.sent();
-                        sql = 'INSERT INTO orders_products (order_id, product_id, quantity) VALUES($1, $2, $3) RETURNING *';
-                        return [4 /*yield*/, connection.query(sql, [order_id, product_id, quantity])];
+                        sql = "INSERT INTO orders_products (order_id, product_id, quantity) VALUES($1, $2, $3) RETURNING *";
+                        return [4 /*yield*/, connection.query(sql, [
+                                order_id,
+                                product_id,
+                                quantity,
+                            ])];
                     case 2:
                         result = _a.sent();
                         connection.release();

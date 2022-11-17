@@ -54,7 +54,7 @@ var ProductStore = /** @class */ (function () {
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         connection = _a.sent();
-                        sql = 'SELECT * FROM products';
+                        sql = "SELECT * FROM products";
                         return [4 /*yield*/, connection.query(sql)];
                     case 2:
                         result = _a.sent();
@@ -78,7 +78,7 @@ var ProductStore = /** @class */ (function () {
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         connection = _a.sent();
-                        sql = 'SELECT * FROM products WHERE id=($1)';
+                        sql = "SELECT * FROM products WHERE id=($1)";
                         return [4 /*yield*/, connection.query(sql, [id])];
                     case 2:
                         result = _a.sent();
@@ -104,7 +104,11 @@ var ProductStore = /** @class */ (function () {
                         connection = _a.sent();
                         sql = "INSERT INTO products (name,des,image,price, category) VALUES($1, $2, $3, $4, $5) RETURNING *;";
                         return [4 /*yield*/, connection.query(sql, [
-                                product.name, product.des, product.image, product.price, product.category
+                                product.name,
+                                product.des,
+                                product.image,
+                                product.price,
+                                product.category,
                             ])];
                     case 2:
                         result = _a.sent();
@@ -160,7 +164,7 @@ var ProductStore = /** @class */ (function () {
                                 product.image,
                                 product.price,
                                 product.category,
-                                id
+                                id,
                             ])];
                     case 2:
                         result = _a.sent();
@@ -184,7 +188,7 @@ var ProductStore = /** @class */ (function () {
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         connection = _a.sent();
-                        sql = 'DELETE FROM products WHERE id=($1) RETURNING * ;';
+                        sql = "DELETE FROM products WHERE id=($1) RETURNING * ;";
                         return [4 /*yield*/, connection.query(sql, [id])];
                     case 2:
                         result = _a.sent();

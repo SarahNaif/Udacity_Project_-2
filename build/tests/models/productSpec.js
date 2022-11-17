@@ -42,7 +42,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var product_1 = require("../../models/product");
 var database_1 = __importDefault(require("../../database"));
 var productStore = new product_1.ProductStore();
-describe('⚙️ Product Model Spec --------------- ⚙️', function () {
+describe("⚙️ Product Model Spec --------------- ⚙️", function () {
     beforeAll(function () { return __awaiter(void 0, void 0, void 0, function () {
         var connection, sql;
         return __generator(this, function (_a) {
@@ -60,45 +60,45 @@ describe('⚙️ Product Model Spec --------------- ⚙️', function () {
         });
     }); });
     //   -------------------toBeDefined---------------------
-    it('Should have an index method', function () {
+    it("Should have an index method", function () {
         expect(productStore.index).toBeDefined();
     });
-    it('Should have a show method', function () {
+    it("Should have a show method", function () {
         expect(productStore.show).toBeDefined();
     });
-    it('Should have a create method', function () {
+    it("Should have a create method", function () {
         expect(productStore.create).toBeDefined();
     });
-    it('Should have a delete method', function () {
+    it("Should have a delete method", function () {
         expect(productStore.delete).toBeDefined();
     });
     //   ----------------------------------------
-    it('create method should add a product', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("create method should add a product", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, productStore.create({
-                        name: '13-inch MacBook Air M2',
-                        des: 'RAM 24GB',
-                        image: 'shorturl.at/egFUX',
+                        name: "13-inch MacBook Air M2",
+                        des: "RAM 24GB",
+                        image: "shorturl.at/egFUX",
                         price: 9999,
-                        category: 'TECH'
+                        category: "TECH",
                     })];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual({
                         id: 1,
-                        name: '13-inch MacBook Air M2',
-                        des: 'RAM 24GB',
-                        image: 'shorturl.at/egFUX',
+                        name: "13-inch MacBook Air M2",
+                        des: "RAM 24GB",
+                        image: "shorturl.at/egFUX",
                         price: 9999,
-                        category: 'TECH'
+                        category: "TECH",
                     });
                     return [2 /*return*/];
             }
         });
     }); });
-    it('index method should return all products', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("index method should return all products", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -110,85 +110,85 @@ describe('⚙️ Product Model Spec --------------- ⚙️', function () {
             }
         });
     }); });
-    it('show method should return the correct product', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("show method should return the correct product", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, productStore.show('1')];
+                case 0: return [4 /*yield*/, productStore.show("1")];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual({
                         id: 1,
-                        name: '13-inch MacBook Air M2',
-                        des: 'RAM 24GB',
-                        image: 'shorturl.at/egFUX',
+                        name: "13-inch MacBook Air M2",
+                        des: "RAM 24GB",
+                        image: "shorturl.at/egFUX",
                         price: 9999,
-                        category: 'TECH'
+                        category: "TECH",
                     });
                     return [2 /*return*/];
             }
         });
     }); });
-    it('category method should return the correct category', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("category method should return the correct category", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, productStore.category('TECH')];
+                case 0: return [4 /*yield*/, productStore.category("TECH")];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual([
                         {
                             id: 1,
-                            name: '13-inch MacBook Air M2',
-                            des: 'RAM 24GB',
-                            image: 'shorturl.at/egFUX',
+                            name: "13-inch MacBook Air M2",
+                            des: "RAM 24GB",
+                            image: "shorturl.at/egFUX",
                             price: 9999,
-                            category: 'TECH'
-                        }
+                            category: "TECH",
+                        },
                     ]);
                     return [2 /*return*/];
             }
         });
     }); });
-    it('update method should update the correct product', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("update method should update the correct product", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, productStore.update({
-                        name: '16-inch MacBook Air M2',
-                        des: 'RAM 8GB',
-                        image: 'shorturl.at/egFUX',
+                        name: "16-inch MacBook Air M2",
+                        des: "RAM 8GB",
+                        image: "shorturl.at/egFUX",
                         price: 99,
-                        category: 'TECH'
-                    }, '1')];
+                        category: "TECH",
+                    }, "1")];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual({
                         id: 1,
-                        name: '16-inch MacBook Air M2',
-                        des: 'RAM 8GB',
-                        image: 'shorturl.at/egFUX',
+                        name: "16-inch MacBook Air M2",
+                        des: "RAM 8GB",
+                        image: "shorturl.at/egFUX",
                         price: 99,
-                        category: 'TECH'
+                        category: "TECH",
                     });
                     return [2 /*return*/];
             }
         });
     }); });
-    it('delete method should delete the correct product', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("delete method should delete the correct product", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, productStore.delete('1')];
+                case 0: return [4 /*yield*/, productStore.delete("1")];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual({
                         id: 1,
-                        name: '16-inch MacBook Air M2',
-                        des: 'RAM 8GB',
-                        image: 'shorturl.at/egFUX',
+                        name: "16-inch MacBook Air M2",
+                        des: "RAM 8GB",
+                        image: "shorturl.at/egFUX",
                         price: 99,
-                        category: 'TECH'
+                        category: "TECH",
                     });
                     return [2 /*return*/];
             }

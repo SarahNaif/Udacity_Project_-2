@@ -47,19 +47,19 @@ var user_1 = require("../../models/user");
 var request = (0, supertest_1.default)(server_1.default);
 var userStore = new user_1.UserStore();
 var Order = {
-    status: 'active',
+    status: "active",
     user_id: 1,
 };
 var token = jsonwebtoken_1.default.sign(Order, process.env.TOKEN_SECRET);
-describe('🚧 Order Endpoints Test --------------- 🚧', function () {
+describe("🚧 Order Endpoints Test --------------- 🚧", function () {
     beforeAll(function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, userStore.create({
-                        firstname: 'Udacity',
-                        lastname: 'UD',
-                        password: 'udacity123',
-                        email: "udacity@gmail.com"
+                        firstname: "Udacity",
+                        lastname: "UD",
+                        password: "udacity123",
+                        email: "udacity@gmail.com",
                     })];
                 case 1:
                     _a.sent();
@@ -67,7 +67,7 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('CHECK USERS', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("CHECK USERS", function () { return __awaiter(void 0, void 0, void 0, function () {
         var res;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -79,13 +79,13 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    //   -------------------ROUTE---------------------   
-    it('test POST /orders', function () { return __awaiter(void 0, void 0, void 0, function () {
+    //   -------------------ROUTE---------------------
+    it("test POST /orders", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.post('/orders').send({
-                        status: 'active',
+                case 0: return [4 /*yield*/, request.post("/orders").send({
+                        status: "active",
                         user_id: 1,
                     })];
                 case 1:
@@ -95,14 +95,17 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('test POST /orders', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test POST /orders", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.post('/orders').send({
-                        status: 'active',
+                case 0: return [4 /*yield*/, request
+                        .post("/orders")
+                        .send({
+                        status: "active",
                         user_id: 1,
-                    }).set('Authorization', "Bearer ".concat(token))];
+                    })
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -110,12 +113,12 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    // ----------------------------------------------   
-    it('test GET /orders all', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // ----------------------------------------------
+    it("test GET /orders all", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/orders')];
+                case 0: return [4 /*yield*/, request.get("/orders")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(401);
@@ -123,11 +126,13 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('test GET /orders all', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test GET /orders all", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/orders').set('Authorization', "Bearer ".concat(token))];
+                case 0: return [4 /*yield*/, request
+                        .get("/orders")
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -135,12 +140,12 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    // ----------------------------------------------   
-    it('test GET /orders by id', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // ----------------------------------------------
+    it("test GET /orders by id", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/orders/1')];
+                case 0: return [4 /*yield*/, request.get("/orders/1")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(401);
@@ -148,11 +153,13 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('test GET /orders by id', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test GET /orders by id", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/orders/1').set('Authorization', "Bearer ".concat(token))];
+                case 0: return [4 /*yield*/, request
+                        .get("/orders/1")
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -160,13 +167,13 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    // ----------------------------------------------  
-    it('test PUT /orders', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // ----------------------------------------------
+    it("test PUT /orders", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.put('/orders/1').send({
-                        status: 'canceld',
+                case 0: return [4 /*yield*/, request.put("/orders/1").send({
+                        status: "canceld",
                         user_id: 1,
                     })];
                 case 1:
@@ -176,14 +183,17 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('test PUT /orders', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test PUT /orders", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.put('/orders/1').send({
-                        status: 'canceld',
+                case 0: return [4 /*yield*/, request
+                        .put("/orders/1")
+                        .send({
+                        status: "canceld",
                         user_id: 1,
-                    }).set('Authorization', "Bearer ".concat(token))];
+                    })
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -191,12 +201,12 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    // ----------------------------------------------  
-    it('test DELETE /orders by id', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // ----------------------------------------------
+    it("test DELETE /orders by id", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.delete('/orders/1')];
+                case 0: return [4 /*yield*/, request.delete("/orders/1")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(401);
@@ -204,11 +214,13 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('test DELETE /orders by id', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test DELETE /orders by id", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.delete('/orders/1').set('Authorization', "Bearer ".concat(token))];
+                case 0: return [4 /*yield*/, request
+                        .delete("/orders/1")
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -216,12 +228,12 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    // ----------------------------------------------  
-    it('tests GET/ orderByUser response )', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // ----------------------------------------------
+    it("tests GET/ orderByUser response )", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/orders/1/users')];
+                case 0: return [4 /*yield*/, request.get("/orders/1/users")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toEqual(401);
@@ -229,11 +241,13 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('tests GET/ orderByUser response )', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("tests GET/ orderByUser response )", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/orders/1/users').set('Authorization', "Bearer ".concat(token))];
+                case 0: return [4 /*yield*/, request
+                        .get("/orders/1/users")
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toEqual(200);
@@ -241,7 +255,7 @@ describe('🚧 Order Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    //   -------------------END---------------------    
+    //   -------------------END---------------------
     afterAll(function () { return __awaiter(void 0, void 0, void 0, function () {
         var connection, sql;
         return __generator(this, function (_a) {

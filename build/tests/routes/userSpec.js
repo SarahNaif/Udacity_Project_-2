@@ -45,23 +45,23 @@ var jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 var server_1 = __importDefault(require("../../server"));
 var request = (0, supertest_1.default)(server_1.default);
 var User = {
-    firstname: 'sarah',
-    lastname: 'althowebi',
-    email: 'sarah@gmail.com',
-    password: 'sarah123'
+    firstname: "sarah",
+    lastname: "althowebi",
+    email: "sarah@gmail.com",
+    password: "sarah123",
 };
 var token = jsonwebtoken_1.default.sign(User, process.env.TOKEN_SECRET);
-describe('🚧  Users Endpoints Test --------------- 🚧 ', function () {
-    //   -------------------ROUTE---------------------     
-    it('test POST /users', function () { return __awaiter(void 0, void 0, void 0, function () {
+describe("🚧  Users Endpoints Test --------------- 🚧 ", function () {
+    //   -------------------ROUTE---------------------
+    it("test POST /users", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.post('/register').send({
-                        firstname: 'sarah',
-                        lastname: 'althowebi',
-                        email: 'sarah@gmail.com',
-                        password: 'sarah123'
+                case 0: return [4 /*yield*/, request.post("/register").send({
+                        firstname: "sarah",
+                        lastname: "althowebi",
+                        email: "sarah@gmail.com",
+                        password: "sarah123",
                     })];
                 case 1:
                     response = _a.sent();
@@ -70,12 +70,12 @@ describe('🚧  Users Endpoints Test --------------- 🚧 ', function () {
             }
         });
     }); });
-    // ---------------------   
-    it('test GET /users all ', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // ---------------------
+    it("test GET /users all ", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/users')];
+                case 0: return [4 /*yield*/, request.get("/users")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(401);
@@ -83,11 +83,13 @@ describe('🚧  Users Endpoints Test --------------- 🚧 ', function () {
             }
         });
     }); });
-    it('test GET /users all with JWT', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test GET /users all with JWT", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/users').set('Authorization', "Bearer ".concat(token))];
+                case 0: return [4 /*yield*/, request
+                        .get("/users")
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -95,7 +97,7 @@ describe('🚧  Users Endpoints Test --------------- 🚧 ', function () {
             }
         });
     }); });
-    // ---------------------   
+    // ---------------------
     it("test GET /users by id", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
@@ -122,16 +124,16 @@ describe('🚧  Users Endpoints Test --------------- 🚧 ', function () {
             }
         });
     }); });
-    // ---------------------   
-    it('test PUT /users ', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // ---------------------
+    it("test PUT /users ", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.put('/users/1').send({
-                        firstname: 'udacity',
-                        lastname: 'ud',
-                        email: 'ud@udacity.com',
-                        password: 'udacity123'
+                case 0: return [4 /*yield*/, request.put("/users/1").send({
+                        firstname: "udacity",
+                        lastname: "ud",
+                        email: "ud@udacity.com",
+                        password: "udacity123",
                     })];
                 case 1:
                     response = _a.sent();
@@ -140,16 +142,19 @@ describe('🚧  Users Endpoints Test --------------- 🚧 ', function () {
             }
         });
     }); });
-    it('test PUT /users with JWT', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test PUT /users with JWT", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.put('/users/1').send({
-                        firstname: 'udacity',
-                        lastname: 'ud',
-                        email: 'ud@udacity.com',
-                        password: 'udacity123'
-                    }).set("Authorization", "Bearer ".concat(token))];
+                case 0: return [4 /*yield*/, request
+                        .put("/users/1")
+                        .send({
+                        firstname: "udacity",
+                        lastname: "ud",
+                        email: "ud@udacity.com",
+                        password: "udacity123",
+                    })
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -157,12 +162,12 @@ describe('🚧  Users Endpoints Test --------------- 🚧 ', function () {
             }
         });
     }); });
-    // ---------------------        
-    it('test DELETE /users by id', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // ---------------------
+    it("test DELETE /users by id", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.delete('/users/1')];
+                case 0: return [4 /*yield*/, request.delete("/users/1")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(401);
@@ -170,11 +175,13 @@ describe('🚧  Users Endpoints Test --------------- 🚧 ', function () {
             }
         });
     }); });
-    it('test DELETE /users by id with JWT', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test DELETE /users by id with JWT", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.delete('/users/1').set("Authorization", "Bearer ".concat(token))];
+                case 0: return [4 /*yield*/, request
+                        .delete("/users/1")
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -182,8 +189,8 @@ describe('🚧  Users Endpoints Test --------------- 🚧 ', function () {
             }
         });
     }); });
-    // ---------------------        
-    //   -------------------END---------------------    
+    // ---------------------
+    //   -------------------END---------------------
     afterAll(function () { return __awaiter(void 0, void 0, void 0, function () {
         var connection, sql;
         return __generator(this, function (_a) {

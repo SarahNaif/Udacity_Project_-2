@@ -10,20 +10,20 @@ var _a = process.env, POSTGRES_HOST = _a.POSTGRES_HOST, POSTGRES_NAME = _a.POSTG
 var client;
 console.log(ENV);
 // connect to db
-if (ENV === 'test') {
+if (ENV === "test") {
     client = new pg_1.Pool({
         host: POSTGRES_HOST,
         database: POSTGRES_DB_TEST,
         user: POSTGRES_USER,
-        password: POSTGRES_PASSWORD
+        password: POSTGRES_PASSWORD,
     });
 }
-if (ENV === 'dev') {
+if (ENV === "dev") {
     client = new pg_1.Pool({
         host: POSTGRES_HOST,
         database: POSTGRES_NAME,
         user: POSTGRES_USER,
-        password: POSTGRES_PASSWORD
+        password: POSTGRES_PASSWORD,
     });
 }
 exports.default = client;

@@ -131,16 +131,8 @@ describe("⚙️Orders Products Model  -------------- ⚙️", function () {
             }
         });
     }); });
-    it("USERS", function () { return __awaiter(void 0, void 0, void 0, function () {
-        var res;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, userStore.index()];
-                case 1:
-                    res = _a.sent();
-                    console.log(res);
-                    return [2 /*return*/];
-            }
-        });
-    }); });
+    // it("USERS", async () => {
+    //   const res = await userStore.index();
+    //   console.log(res);
+    // });
 });

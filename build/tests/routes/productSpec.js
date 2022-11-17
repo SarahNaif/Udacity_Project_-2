@@ -44,24 +44,24 @@ var server_1 = __importDefault(require("../../server"));
 var jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 var request = (0, supertest_1.default)(server_1.default);
 var Prod = {
-    firstname: 'sarah',
-    lastname: 'althowebi',
-    email: 'sarah@gmail.com',
-    password: 'sarah123'
+    firstname: "sarah",
+    lastname: "althowebi",
+    email: "sarah@gmail.com",
+    password: "sarah123",
 };
 var token = jsonwebtoken_1.default.sign(Prod, process.env.TOKEN_SECRET);
-describe('🚧 Product Endpoints Test --------------- 🚧', function () {
-    //   -------------------ROUTE---------------------   
-    it('test POST /products', function () { return __awaiter(void 0, void 0, void 0, function () {
+describe("🚧 Product Endpoints Test --------------- 🚧", function () {
+    //   -------------------ROUTE---------------------
+    it("test POST /products", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.post('/products').send({
+                case 0: return [4 /*yield*/, request.post("/products").send({
                         name: "macbook pro",
                         des: "macbook pro 13 inch",
                         image: "macbook image",
                         price: 9,
-                        category: "TECH"
+                        category: "TECH",
                     })];
                 case 1:
                     response = _a.sent();
@@ -70,17 +70,20 @@ describe('🚧 Product Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('test POST /products with JWT', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test POST /products with JWT", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.post('/products').send({
+                case 0: return [4 /*yield*/, request
+                        .post("/products")
+                        .send({
                         name: "macbook pro",
                         des: "macbook pro 13 inch",
                         image: "macbook image",
                         price: 9,
-                        category: "TECH"
-                    }).set('Authorization', "Bearer ".concat(token))];
+                        category: "TECH",
+                    })
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -88,12 +91,12 @@ describe('🚧 Product Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    // ----------------------------------------------   
-    it('test GET /products all', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // ----------------------------------------------
+    it("test GET /products all", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/products')];
+                case 0: return [4 /*yield*/, request.get("/products")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -101,12 +104,12 @@ describe('🚧 Product Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('test GET /products/category by category', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test GET /products/category by category", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/products/category').send({
-                        category: 'TECH'
+                case 0: return [4 /*yield*/, request.get("/products/category").send({
+                        category: "TECH",
                     })];
                 case 1:
                     response = _a.sent();
@@ -115,11 +118,11 @@ describe('🚧 Product Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('test GET /products by id', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test GET /products by id", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/products/1')];
+                case 0: return [4 /*yield*/, request.get("/products/1")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -127,17 +130,17 @@ describe('🚧 Product Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    // ----------------------------------------------  
-    it('test PUT /products', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // ----------------------------------------------
+    it("test PUT /products", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.put('/products/1').send({
+                case 0: return [4 /*yield*/, request.put("/products/1").send({
                         name: "Ipad pro",
                         des: "Ipad pro 12 inch",
                         image: "Ipad pro image",
                         price: 9,
-                        category: "TECH"
+                        category: "TECH",
                     })];
                 case 1:
                     response = _a.sent();
@@ -146,17 +149,20 @@ describe('🚧 Product Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('test PUT /products', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test PUT /products", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.put('/products/1').send({
+                case 0: return [4 /*yield*/, request
+                        .put("/products/1")
+                        .send({
                         name: "Ipad pro",
                         des: "Ipad pro 12 inch",
                         image: "Ipad pro image",
                         price: 9,
-                        category: "TECH"
-                    }).set('Authorization', "Bearer ".concat(token))];
+                        category: "TECH",
+                    })
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -164,12 +170,12 @@ describe('🚧 Product Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    // ----------------------------------------------  
-    it('test DELETE /products by id', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // ----------------------------------------------
+    it("test DELETE /products by id", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.delete('/products/1')];
+                case 0: return [4 /*yield*/, request.delete("/products/1")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(401);
@@ -177,11 +183,13 @@ describe('🚧 Product Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    it('test DELETE /products by id', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test DELETE /products by id", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.delete('/products/1').set('Authorization', "Bearer ".concat(token))];
+                case 0: return [4 /*yield*/, request
+                        .delete("/products/1")
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -189,5 +197,5 @@ describe('🚧 Product Endpoints Test --------------- 🚧', function () {
             }
         });
     }); });
-    //   -------------------END---------------------  
+    //   -------------------END---------------------
 });

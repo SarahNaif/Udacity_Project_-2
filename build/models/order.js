@@ -54,7 +54,7 @@ var OrderStore = /** @class */ (function () {
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         connection = _a.sent();
-                        sql = 'SELECT * FROM orders';
+                        sql = "SELECT * FROM orders";
                         return [4 /*yield*/, connection.query(sql)];
                     case 2:
                         result = _a.sent();
@@ -78,7 +78,7 @@ var OrderStore = /** @class */ (function () {
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         connection = _a.sent();
-                        sql = 'SELECT * FROM orders WHERE id=($1);';
+                        sql = "SELECT * FROM orders WHERE id=($1);";
                         return [4 /*yield*/, connection.query(sql, [id])];
                     case 2:
                         result = _a.sent();
@@ -127,7 +127,11 @@ var OrderStore = /** @class */ (function () {
                     case 1:
                         connection = _a.sent();
                         sql = "UPDATE orders\n                   SET status=$1, user_id=$2\n                   WHERE id=($3)\n                   RETURNING *";
-                        return [4 /*yield*/, connection.query(sql, [order.status, order.user_id, id])];
+                        return [4 /*yield*/, connection.query(sql, [
+                                order.status,
+                                order.user_id,
+                                id,
+                            ])];
                     case 2:
                         result = _a.sent();
                         connection.release();
@@ -150,7 +154,7 @@ var OrderStore = /** @class */ (function () {
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         connection = _a.sent();
-                        sql = 'DELETE FROM orders WHERE id=($1) RETURNING *;';
+                        sql = "DELETE FROM orders WHERE id=($1) RETURNING *;";
                         return [4 /*yield*/, connection.query(sql, [id])];
                     case 2:
                         result = _a.sent();

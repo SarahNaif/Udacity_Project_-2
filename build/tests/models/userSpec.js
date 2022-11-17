@@ -42,7 +42,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var user_1 = require("../../models/user");
 var database_1 = __importDefault(require("../../database"));
 var userStore = new user_1.UserStore();
-describe('⚙️ User Model Spec -------------- ⚙️', function () {
+describe("⚙️ User Model Spec -------------- ⚙️", function () {
     beforeAll(function () { return __awaiter(void 0, void 0, void 0, function () {
         var connection, sql;
         return __generator(this, function (_a) {
@@ -60,42 +60,42 @@ describe('⚙️ User Model Spec -------------- ⚙️', function () {
         });
     }); });
     //   -------------------toBeDefined---------------------
-    it('Should have an index method', function () {
+    it("Should have an index method", function () {
         expect(userStore.index).toBeDefined();
     });
-    it('Should have a show method', function () {
+    it("Should have a show method", function () {
         expect(userStore.show).toBeDefined();
     });
-    it('Should have a create method', function () {
+    it("Should have a create method", function () {
         expect(userStore.create).toBeDefined();
     });
-    it('Should have a delete method', function () {
+    it("Should have a delete method", function () {
         expect(userStore.delete).toBeDefined();
     });
     //   ----------------------------------------
-    it('create method should add a user', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("create method should add a user", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, userStore.create({
-                        firstname: 'sarah',
-                        lastname: 'althowebi',
-                        email: 'sarah@gmail.com',
-                        password: 'sarah123'
+                        firstname: "sarah",
+                        lastname: "althowebi",
+                        email: "sarah@gmail.com",
+                        password: "sarah123",
                     })];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual({
                         id: 1,
-                        firstname: 'sarah',
-                        lastname: 'althowebi',
-                        email: 'sarah@gmail.com'
+                        firstname: "sarah",
+                        lastname: "althowebi",
+                        email: "sarah@gmail.com",
                     });
                     return [2 /*return*/];
             }
         });
     }); });
-    it('Index method should return the all user', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("Index method should return the all user", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -105,66 +105,66 @@ describe('⚙️ User Model Spec -------------- ⚙️', function () {
                     expect(result).toEqual([
                         {
                             id: 1,
-                            firstname: 'sarah',
-                            lastname: 'althowebi',
-                            email: 'sarah@gmail.com',
-                        }
+                            firstname: "sarah",
+                            lastname: "althowebi",
+                            email: "sarah@gmail.com",
+                        },
                     ]);
                     return [2 /*return*/];
             }
         });
     }); });
-    it('show method should return the correct user', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("show method should return the correct user", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, userStore.show('1')];
+                case 0: return [4 /*yield*/, userStore.show("1")];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual({
                         id: 1,
-                        firstname: 'sarah',
-                        lastname: 'althowebi',
-                        email: 'sarah@gmail.com',
+                        firstname: "sarah",
+                        lastname: "althowebi",
+                        email: "sarah@gmail.com",
                     });
                     return [2 /*return*/];
             }
         });
     }); });
-    it('update method should update the correct user', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("update method should update the correct user", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, userStore.update({
-                        firstname: 'udacity',
-                        lastname: 'ud',
-                        email: 'ud@gmail.com',
-                        password: 'udacity123',
-                    }, '1')];
+                        firstname: "udacity",
+                        lastname: "ud",
+                        email: "ud@gmail.com",
+                        password: "udacity123",
+                    }, "1")];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual({
                         id: 1,
-                        firstname: 'udacity',
-                        lastname: 'ud',
-                        email: 'ud@gmail.com',
+                        firstname: "udacity",
+                        lastname: "ud",
+                        email: "ud@gmail.com",
                     });
                     return [2 /*return*/];
             }
         });
     }); });
-    it('delete method should remove the user', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("delete method should remove the user", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, userStore.delete('1')];
+                case 0: return [4 /*yield*/, userStore.delete("1")];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual({
                         id: 1,
-                        firstname: 'udacity',
-                        lastname: 'ud',
-                        email: 'ud@gmail.com',
+                        firstname: "udacity",
+                        lastname: "ud",
+                        email: "ud@gmail.com",
                     });
                     return [2 /*return*/];
             }

@@ -65,10 +65,10 @@ describe("⚙️ Order Model  -------------- ⚙️", function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, userStore.create({
-                        firstname: 'Udacity',
-                        lastname: 'UD',
-                        password: 'udacity123',
-                        email: "udacity@gmail.com"
+                        firstname: "Udacity",
+                        lastname: "UD",
+                        password: "udacity123",
+                        email: "udacity@gmail.com",
                     })];
                 case 1:
                     _a.sent();
@@ -112,20 +112,20 @@ describe("⚙️ Order Model  -------------- ⚙️", function () {
         expect(orderStore.delete).toBeDefined();
     });
     //   ----------------------------------------
-    it('create method should create a new order', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("create method should create a new order", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, orderStore.create({
-                        status: 'active',
-                        user_id: '1',
+                        status: "active",
+                        user_id: "1",
                     })];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual({
                         id: 1,
-                        status: 'active',
-                        user_id: '1'
+                        status: "active",
+                        user_id: "1",
                     });
                     return [2 /*return*/];
             }
@@ -141,9 +141,9 @@ describe("⚙️ Order Model  -------------- ⚙️", function () {
                     expect(orders).toEqual([
                         {
                             id: 1,
-                            status: 'active',
-                            user_id: '1'
-                        }
+                            status: "active",
+                            user_id: "1",
+                        },
                     ]);
                     return [2 /*return*/];
             }
@@ -158,51 +158,51 @@ describe("⚙️ Order Model  -------------- ⚙️", function () {
                     result = _a.sent();
                     expect(result).toEqual({
                         id: 1,
-                        status: 'active',
-                        user_id: '1'
+                        status: "active",
+                        user_id: "1",
                     });
                     return [2 /*return*/];
             }
         });
     }); });
-    it('Show method should return all orders by the user id ', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("Show method should return all orders by the user id ", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, orderStore.ordersByUser('1')];
+                case 0: return [4 /*yield*/, orderStore.ordersByUser("1")];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual([
                         {
                             id: 1,
-                            status: 'active',
-                            user_id: '1'
-                        }
+                            status: "active",
+                            user_id: "1",
+                        },
                     ]);
                     return [2 /*return*/];
             }
         });
     }); });
-    it('update method should update the correct order', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("update method should update the correct order", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, orderStore.update({
-                        status: 'caneled',
-                        user_id: '1'
-                    }, '1')];
+                        status: "caneled",
+                        user_id: "1",
+                    }, "1")];
                 case 1:
                     result = _a.sent();
                     expect(result).toEqual({
                         id: 1,
-                        status: 'caneled',
-                        user_id: '1'
+                        status: "caneled",
+                        user_id: "1",
                     });
                     return [2 /*return*/];
             }
         });
     }); });
-    it('delete method should remove the order', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("delete method should remove the order", function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             switch (_a.label) {

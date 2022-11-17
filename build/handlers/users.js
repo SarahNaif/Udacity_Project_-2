@@ -94,7 +94,7 @@ var create = function (req, res) { return __awaiter(void 0, void 0, void 0, func
                     firstname: req.body.firstname,
                     lastname: req.body.lastname,
                     email: req.body.email,
-                    password: req.body.password
+                    password: req.body.password,
                 };
                 _a.label = 1;
             case 1:
@@ -123,7 +123,7 @@ var update = function (req, res) { return __awaiter(void 0, void 0, void 0, func
                     firstname: req.body.firstname,
                     lastname: req.body.lastname,
                     email: req.body.email,
-                    password: req.body.password
+                    password: req.body.password,
                 };
                 _a.label = 1;
             case 1:

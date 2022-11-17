@@ -61,7 +61,7 @@ var OrderProd = {
     quantity: 10,
 };
 var token = jsonwebtoken_1.default.sign(OrderProd, process.env.TOKEN_SECRET);
-describe('🚧 Order Product Endpoints  Test --------------- 🚧', function () {
+describe("🚧 Order Product Endpoints  Test --------------- 🚧", function () {
     beforeAll(function () { return __awaiter(void 0, void 0, void 0, function () {
         var connection;
         return __generator(this, function (_a) {
@@ -69,13 +69,13 @@ describe('🚧 Order Product Endpoints  Test --------------- 🚧', function () 
                 case 0: return [4 /*yield*/, database_1.default.connect()];
                 case 1:
                     connection = _a.sent();
-                    return [4 /*yield*/, connection.query('DELETE FROM orders_products;\n ALTER SEQUENCE orders_products_id_seq RESTART WITH 1;')];
+                    return [4 /*yield*/, connection.query("DELETE FROM orders_products;\n ALTER SEQUENCE orders_products_id_seq RESTART WITH 1;")];
                 case 2:
                     _a.sent();
-                    return [4 /*yield*/, connection.query('DELETE FROM products;\n ALTER SEQUENCE products_id_seq RESTART WITH 1;')];
+                    return [4 /*yield*/, connection.query("DELETE FROM products;\n ALTER SEQUENCE products_id_seq RESTART WITH 1;")];
                 case 3:
                     _a.sent();
-                    return [4 /*yield*/, connection.query('DELETE FROM orders;\n ALTER SEQUENCE orders_id_seq RESTART WITH 1;')];
+                    return [4 /*yield*/, connection.query("DELETE FROM orders;\n ALTER SEQUENCE orders_id_seq RESTART WITH 1;")];
                 case 4:
                     _a.sent();
                     connection.release();
@@ -88,25 +88,25 @@ describe('🚧 Order Product Endpoints  Test --------------- 🚧', function () 
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, userStore.create({
-                        firstname: 'Udacity',
-                        lastname: 'UD',
-                        password: 'udacity123',
-                        email: "udacity@gmail.com"
+                        firstname: "Udacity",
+                        lastname: "UD",
+                        password: "udacity123",
+                        email: "udacity@gmail.com",
                     })];
                 case 1:
                     user = _a.sent();
                     return [4 /*yield*/, productStore.create({
-                            name: 'macbook',
-                            des: 'macbook pro 16 inch',
-                            image: 'blah.png',
+                            name: "macbook",
+                            des: "macbook pro 16 inch",
+                            image: "blah.png",
                             price: 0,
-                            category: 'tech'
+                            category: "tech",
                         })];
                 case 2:
                     prod = _a.sent();
                     return [4 /*yield*/, orderStore.create({
-                            status: 'active',
-                            user_id: '2',
+                            status: "active",
+                            user_id: "2",
                         })];
                 case 3:
                     order = _a.sent();
@@ -116,8 +116,8 @@ describe('🚧 Order Product Endpoints  Test --------------- 🚧', function () 
             }
         });
     }); });
-    //   -------------------ROUTE---------------------                
-    it('test POST /orders/1/products', function () { return __awaiter(void 0, void 0, void 0, function () {
+    //   -------------------ROUTE---------------------
+    it("test POST /orders/1/products", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -133,15 +133,18 @@ describe('🚧 Order Product Endpoints  Test --------------- 🚧', function () 
             }
         });
     }); });
-    it('test POST /orders/1/products', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("test POST /orders/1/products", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.post("/orders/1/products").send({
+                case 0: return [4 /*yield*/, request
+                        .post("/orders/1/products")
+                        .send({
                         order_id: 1,
                         product_id: 1,
                         quantity: 10,
-                    }).set('Authorization', "Bearer ".concat(token))];
+                    })
+                        .set("Authorization", "Bearer ".concat(token))];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -149,7 +152,7 @@ describe('🚧 Order Product Endpoints  Test --------------- 🚧', function () 
             }
         });
     }); });
-    //   -------------------END---------------------     
+    //   -------------------END---------------------
     afterAll(function () { return __awaiter(void 0, void 0, void 0, function () {
         var connection, sql;
         return __generator(this, function (_a) {

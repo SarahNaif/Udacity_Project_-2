@@ -51,9 +51,6 @@ var hash = function (password) {
 var UserStore = /** @class */ (function () {
     function UserStore() {
     }
-    // TASK : MAKE JWT AUTH 
-    // COPY PROJECT
-    // index method selects all users in users table and returns them in a list
     UserStore.prototype.index = function () {
         return __awaiter(this, void 0, void 0, function () {
             var conection, sql, result, error_1;
@@ -64,7 +61,7 @@ var UserStore = /** @class */ (function () {
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         conection = _a.sent();
-                        sql = 'SELECT id,firstname,lastname,email FROM users';
+                        sql = "SELECT id,firstname,lastname,email FROM users";
                         return [4 /*yield*/, conection.query(sql)];
                     case 2:
                         result = _a.sent();
@@ -85,7 +82,7 @@ var UserStore = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 3, , 4]);
-                        sql = 'SELECT  id,firstname,lastname,email FROM users WHERE id=($1);';
+                        sql = "SELECT  id,firstname,lastname,email FROM users WHERE id=($1);";
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         conection = _a.sent();
@@ -148,7 +145,7 @@ var UserStore = /** @class */ (function () {
                                 user.lastname,
                                 user.password,
                                 user.email,
-                                id
+                                id,
                             ])];
                     case 2:
                         result = _a.sent();
@@ -172,7 +169,7 @@ var UserStore = /** @class */ (function () {
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         conection = _a.sent();
-                        sql = 'DELETE FROM users WHERE id=($1) RETURNING id, firstname, lastname, email;';
+                        sql = "DELETE FROM users WHERE id=($1) RETURNING id, firstname, lastname, email;";
                         return [4 /*yield*/, conection.query(sql, [id])];
                     case 2:
                         result = _a.sent();

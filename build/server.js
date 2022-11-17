@@ -46,16 +46,14 @@ var productRoute_1 = __importDefault(require("./routes/productRoute"));
 var orderRoute_1 = __importDefault(require("./routes/orderRoute"));
 var app = (0, express_1.default)();
 var address = "0.0.0.0:3000";
-//bodyParser is deprecated, use express.json() instead
 app.use(express_1.default.json());
-// morgan middlware (logger)
-app.use((0, morgan_1.default)('dev'));
+app.use((0, morgan_1.default)("dev"));
 app.use(userRoute_1.default);
 app.use(productRoute_1.default);
 app.use(orderRoute_1.default);
-app.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+app.get("/", function (_req, res) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
-        res.json({ Message: 'am here' });
+        res.json({ Message: "am here" });
         return [2 /*return*/];
     });
 }); });
