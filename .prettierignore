@@ -1,0 +1,7 @@
+node_modules/
+build/
+migrations/
+spec/
+dist/
+views/
+.gitignore

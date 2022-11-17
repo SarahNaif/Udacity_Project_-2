@@ -1,0 +1,8 @@
+node_modules/
+build/
+migrations/
+spec/
+dist/
+.gitignore
+.prettierignore
+.prettierrc
