@@ -3,6 +3,46 @@
 This project is part of udacity full stack javascript developer scolarship ,
 its aim to build restful api with postgres and express
 
+## Install
+
+```
+📦src
+ ┣ 📂handlers
+ ┃ ┣ 📜orders.ts
+ ┃ ┣ 📜products.ts
+ ┃ ┗ 📜users.ts
+ ┣ 📂middlewares
+ ┃ ┣ 📜 logger.ts
+ ┃ ┗ 📜verifyAuthToken.ts
+ ┣ 📂models
+ ┃ ┣ 📜cart.ts
+ ┃ ┣ 📜order.ts
+ ┃ ┣ 📜product.ts
+ ┃ ┗ 📜user.ts
+ ┣ 📂routes
+ ┃ ┣ 📜orderRoute.ts
+ ┃ ┣ 📜productRoute.ts
+ ┃ ┗ 📜userRoute.ts
+ ┣ 📂tests
+ ┃ ┣ 📂helpers
+ ┃ ┃ ┗ 📜reporter.ts
+ ┃ ┣ 📂models
+ ┃ ┃ ┣ 📜cartSpec.ts
+ ┃ ┃ ┣ 📜orderSpec.ts
+ ┃ ┃ ┣ 📜productSpec.ts
+ ┃ ┃ ┗ 📜userSpec.ts
+ ┃ ┗  📂routes
+ ┃      ┣ 📜cartSpec.ts
+ ┃      ┣ 📜orderSpec.ts
+ ┃      ┣ 📜productSpec.ts
+ ┃      ┗ 📜userSpec.ts
+ ┣ 📂types
+ ┃ ┣ 📜order-type.ts
+ ┃ ┣ 📜product-type.ts
+ ┃ ┗ 📜user-type.ts
+ ┣ 📜database.ts
+ ┗ 📜server.ts
+```
 
 ## Install
 ### Available Scripts
@@ -46,20 +86,31 @@ its aim to build restful api with postgres and express
 
 4.  `npm start` to start the API
 
+### Running Ports 
+After start up, the server will start on port `4000` and the database on port `5432`
 #### OR Using the postgreSQL pgAdmin :
-
-
 
 ####  3. Create Environment Variables
 
-PORT=`4000`\
-POSTGRES_HOST=`localhost`\
-POSTGRES_NAME=`proj`\
-POSTGRES_USER=`proj_user`\
-POSTGRES_PORT=`5432`\
-POSTGRES_PASSWORD=`12345`\
-POSTGRES_DB_TEST=`proj_test`\
-ENV=`dev`\
-BCRYPT_PASSWORD=`your-secret-password`\
-SALT_ROUND=`10`\
-TOKEN_SECRET=`your-secret-password`\
+PORT=`4000`
+POSTGRES_HOST=`localhost`
+POSTGRES_NAME=`proj`
+POSTGRES_USER=`proj_user`
+POSTGRES_PORT=`5432`
+POSTGRES_PASSWORD=`12345`
+POSTGRES_DB_TEST=`proj_test`
+ENV=`dev`
+BCRYPT_PASSWORD=`your-secret-password`
+SALT_ROUND=`10`
+TOKEN_SECRET=`your-secret-password`
+
+
+####   Package installation
+
+- Postgres for the database
+- Node/Express for the application Endpoint 
+- dotenv from npm for managing environment variables
+- db-migrate pg for migrations
+- jsonwebtoken from npm for working with JWTs
+- bycrpt for password protection.
+- jasmine from npm for testing
